@@ -1,0 +1,21 @@
+{
+  "name": "webapp",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=10.6",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@azure/event-hubs": "^5.12.0",
+    "buffer": "^6.0.3",
+    "crypto": "^1.0.1",
+    "express": "^4.19.2",
+    "minimist": "^1.2.8",
+    "rhea-promise": "^3.0.3",
+    "ws": "^8.18.0"
+  }
+}
