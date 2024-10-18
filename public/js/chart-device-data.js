@@ -9,7 +9,7 @@ window.onload = () => {
     class DeviceData {
         constructor(deviceId) {
             this.deviceId = deviceId
-            this.maxLen = 50
+            this.maxLen = 100
             // The arrays where we store data to use
             this.timeData = new Array(this.maxLen)
             this.altitudeData = new Array(this.maxLen)
@@ -67,6 +67,7 @@ window.onload = () => {
                 pointHoverBackgroundColor: "rgba(255, 204, 0, 1)",
                 pointHoverBorderColor: "rgba(255, 204, 0, 1)",
                 spanGaps: true,
+                tension: 0.4,
             },
             {
                 fill: false,
@@ -78,24 +79,26 @@ window.onload = () => {
                 pointHoverBackgroundColor: "rgba(24, 120, 240, 1)",
                 pointHoverBorderColor: "rgba(24, 120, 240, 1)",
                 spanGaps: true,
+                tension: 0.5,
             },
         ],
     }
 
     const chartOptions = {
+        maintainAspectRatio: true,
         scales: {
             yAxes: [
                 {
                     id: "Altitude",
                     type: "linear",
                     scaleLabel: {
-                        labelString: "Altitude (ºC)",
+                        labelString: "Altitude (m)",
                         display: true,
                     },
                     position: "left",
                     ticks: {
                         suggestedMin: 0,
-                        suggestedMax: 100,
+                        suggestedMax: 15000,
                         beginAtZero: true,
                     },
                 },
@@ -103,7 +106,7 @@ window.onload = () => {
                     id: "Pressure",
                     type: "linear",
                     scaleLabel: {
-                        labelString: "Pressure (%)",
+                        labelString: "Pressure (psi)",
                         display: true,
                     },
                     position: "right",
